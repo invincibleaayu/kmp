@@ -23,10 +23,12 @@ def compute_prefix_function(pattern):
 
 def KMP_matcher():
     matched_character_no = 0
-    text="abxabcabcabyabcababcaby"
+    text="iamadirtyfellowdiraxjsdjcsddddir"
     text=text.replace(" ","")
     text=list(text)                                                   #conversion of string to list
     pattern=input("Please enter a text:")
+    pattern=pattern.lower()
+    print(pattern)
     pattern=pattern.replace(" ","")                                   #removes space from the input string
     pattern=list(pattern)                                             #conversion of string to list
     array_of_prefix_function=compute_prefix_function(pattern)
@@ -37,18 +39,18 @@ def KMP_matcher():
     #now we check and search for the string to be matched
     for i in range(0,length_of_text):
 
-        while matched_character_no > 0 and  pattern[matched_character_no] != text[i]:
-            print("inside while")
-            matched_character_no=array_of_prefix_function[matched_character_no]
+        if matched_character_no >= 0 and  pattern[matched_character_no] != text[i]:
+            if matched_character_no!=0:
+                matched_character_no=array_of_prefix_function[matched_character_no-1]
 
-        if pattern[matched_character_no] == text[i]:
-            print("inside if",matched_character_no)
+
+        if (matched_character_no-1) < length_of_pattern and  pattern[matched_character_no] == text[i]:
             matched_character_no+=1
             
             
-        elif matched_character_no==length_of_pattern:
-            print("pattern occurs with shift {}".format(i))
-            matched_character_no = array_of_prefix_function[matched_character_no]
+        if matched_character_no==length_of_pattern:
+            print("pattern occurs with shift {}".format(i+1))
+            matched_character_no = 0
 
 
 
