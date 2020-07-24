@@ -20,7 +20,9 @@ def compute_prefix_function(pattern):
     return(array_of_prefix_function)
 
 def KMP_matcher():
-    matched_character_no = 0
+    global count
+    matched_character_no=0
+    count=0
     with open("chrome.txt") as file:                                  #file handling for reading chrome script
         text=file.read()
     text=text.replace(" ","")
@@ -49,10 +51,12 @@ def KMP_matcher():
             
         if matched_character_no==length_of_pattern:                                     #is all character matched
             print("pattern occurs with shift {}".format(i+1))
-            matched_character_no = 0                                                    #look for next match
+            matched_character_no = 0     
+            count+=1                                               #look for next matchs
 
-
-KMP_matcher()
+K=KMP_matcher()
+if count == 0:
+    print("Sorry! match not found")
 
 
 
