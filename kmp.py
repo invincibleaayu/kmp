@@ -23,12 +23,13 @@ def compute_prefix_function(pattern):
 
 def KMP_matcher():
     matched_character_no = 0
-    text="iamadirtyfellowdiraxjsdjcsddddir"
+    with open("chrome.txt") as file:                                #file handling for reading chrome script
+        text=file.read()
     text=text.replace(" ","")
+    text=text.lower()
     text=list(text)                                                   #conversion of string to list
     pattern=input("Please enter a text:")
     pattern=pattern.lower()
-    print(pattern)
     pattern=pattern.replace(" ","")                                   #removes space from the input string
     pattern=list(pattern)                                             #conversion of string to list
     array_of_prefix_function=compute_prefix_function(pattern)
