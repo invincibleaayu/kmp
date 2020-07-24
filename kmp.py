@@ -1,9 +1,7 @@
-#yesma django ma integrate garda savai lai to lower ma lag hai for optimin result
-
 def compute_prefix_function(pattern):
     count=0
-    length=len(pattern)                                            #text length
-    array_of_prefix_function=[0 for _ in range(length)]         #creating list of length of text
+    length=len(pattern)                                              #text length
+    array_of_prefix_function=[0 for _ in range(length)]              #creating list of length of text
     pattern_list=list(pattern)
     i,j=0,1
 
@@ -14,16 +12,16 @@ def compute_prefix_function(pattern):
             j+=1
             
         else:
-            if i==0:                                           #case 2 yesma chai initial case ani match nahuda
-                array_of_prefix_function[j]=0                   #aagadi array sarni wala herxa hai 
+            if i==0:                                                  #case 2 yesma chai initial case ani match nahuda
+                array_of_prefix_function[j]=0                         #aagadi array sarni wala herxa hai 
                 j+=1
             else:
-                i=array_of_prefix_function[i-1]                #case 3 array lai aagadi sarni kaam garxa
+                i=array_of_prefix_function[i-1]                       #case 3 array lai aagadi sarni kaam garxa
     return(array_of_prefix_function)
 
 def KMP_matcher():
     matched_character_no = 0
-    with open("chrome.txt") as file:                                #file handling for reading chrome script
+    with open("chrome.txt") as file:                                  #file handling for reading chrome script
         text=file.read()
     text=text.replace(" ","")
     text=text.lower()
@@ -42,20 +40,16 @@ def KMP_matcher():
 
         if matched_character_no >= 0 and  pattern[matched_character_no] != text[i]:
             if matched_character_no!=0:
-                matched_character_no=array_of_prefix_function[matched_character_no-1]
+                matched_character_no=array_of_prefix_function[matched_character_no-1]   #character does not match
 
 
         if (matched_character_no-1) < length_of_pattern and  pattern[matched_character_no] == text[i]:
             matched_character_no+=1
             
             
-        if matched_character_no==length_of_pattern:
+        if matched_character_no==length_of_pattern:                                     #is all character matched
             print("pattern occurs with shift {}".format(i+1))
-            matched_character_no = 0
-
-
-
-    
+            matched_character_no = 0                                                    #look for next match
 
 
 KMP_matcher()
