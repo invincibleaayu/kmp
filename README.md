@@ -5,6 +5,6 @@ Python implementation of Knuth-Morris-Pratt algorithim
 <p>To run this file </p>
 <h2>I have used a page source for searching.Download the file and change the directory to file location in terminal and type </h2>
 <h2> python kmp.py</h2>
-<img src="https://user-images.githubusercontent.com/44046058/92999077-d8f58280-f53d-11ea-863e-6dc4f82a1356.gif" width="40" height="40" />
+<img src="https://user-images.githubusercontent.com/44046058/92999077-d8f58280-f53d-11ea-863e-6dc4f82a1356.gif" width="400" height="400" />
 
 
