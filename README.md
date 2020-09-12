@@ -7,5 +7,4 @@ Python implementation of Knuth-Morris-Pratt algorithim
 <h2> python kmp.py</h2>
 <img src="https://user-images.githubusercontent.com/44046058/92999077-d8f58280-f53d-11ea-863e-6dc4f82a1356.gif" width="40" height="40" />
 
-![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/44046058/92999077-d8f58280-f53d-11ea-863e-6dc4f82a1356.gif)
 
