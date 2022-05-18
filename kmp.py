@@ -23,7 +23,7 @@ def KMP_matcher():
     global count
     matched_character_no=0
     count=0
-    with open("chrome.txt") as file:                                  #file handling for reading chrome script
+    with open("chrome.txt",encoding= 'unicode_escape') as file:                                  #file handling for reading chrome script
         text=file.read()
     text=text.replace(" ","")
     text=text.lower()
